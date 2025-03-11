@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build binaries in "${{ matrix.BUILD_TARGET }}" mode
-        run: cargo build --profile release ${{ matrix.BUILD_TARGET }} --verbose
+        run: cargo build --profile release ${{ matrix.BUILD_TARGET }}
     - name: Run tests in "${{ matrix.BUILD_TARGET }}" mode
         run: cargo test --profile release ${{ matrix.BUILD_TARGET }}
         - name: Upload release artifact

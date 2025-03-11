@@ -15,4 +15,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Fetch Secrets
+        run: echo "🔐 The secret key is ${{ secrets.PROJECT_NAME }}."
       - run: echo "🍏 This job's status is ${{ job.status }}."
