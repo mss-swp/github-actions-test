@@ -30,3 +30,12 @@ jobs:
         with:
           name: github-action-test
           path: target/${{ matrix.BUILD_TARGET }}/github-action-test
+
+      - name: Download release artifact
+        uses: actions/download-artifact@v4
+          with:
+            name: github-action-test
+            path: ./github-action-test
+      - name: Publish built binary to GitHub releases
+      - run: |
+          gh release create --generate-notes ./github-action-test/github-action-test-project#github-action-test
