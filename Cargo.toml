@@ -8,8 +8,8 @@ opt-level = 1
 overflow-checks = false
 
 [profile.release]
-opt-level = 1
-overflow-checks = false
-strip = "debuginfo"
+opt-level = 3
+strip = true
+lto = true  # Link-time optimizations for smaller and faster binaries
 
 [dependencies]
