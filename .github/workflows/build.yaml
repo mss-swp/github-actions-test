@@ -49,7 +49,7 @@ jobs:
 
       - name: Publish built binary to GitHub releases
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           gh release create v1.0.0 ./github-action-test/github-action-test --title "Release v1.0.0" --notes "Automated release"
         
