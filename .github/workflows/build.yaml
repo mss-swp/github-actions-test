@@ -36,6 +36,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Ensure full history
+
       - name: Download release artifact
         uses: actions/download-artifact@v4
         with:
@@ -47,3 +52,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release create v1.0.0 ./github-action-test/github-action-test --title "Release v1.0.0" --notes "Automated release"
+        
