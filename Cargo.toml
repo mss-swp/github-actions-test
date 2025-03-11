@@ -3,4 +3,13 @@ name = "github-action-test"
 version = "0.1.0"
 edition = "2021"
 
+[profile.dev]
+opt-level = 1
+overflow-checks = false
+
+[profile.release]
+opt-level = 1
+overflow-checks = false
+strip = "debuginfo"
+
 [dependencies]

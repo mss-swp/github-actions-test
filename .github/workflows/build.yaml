@@ -9,10 +9,22 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    strategy:
+        matrix:
+            BUILD_TARGET: [release] # refers to a cargo profile
+    outputs:
+        release_built: ${{ steps.set-output.outputs.release_built }}
     steps:
     - uses: actions/checkout@v4
-    - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+    - name: Build binaries in "${{ matrix.BUILD_TARGET }}" mode
+        run: cargo build --profile release ${{ matrix.BUILD_TARGET }} --verbose
+    - name: Run tests in "${{ matrix.BUILD_TARGET }}" mode
+        run: cargo test --profile release ${{ matrix.BUILD_TARGET }}
+        - name: Upload release artifact
+    -uses: actions/upload-artifact@v4
+        with:
+            name: <my-app>
+            path: target/${{ matrix.BUILD_TARGET }}/<my-app>
+
+  
+    
