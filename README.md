@@ -4,3 +4,6 @@
 <a href="https://github.com/mss-swp/github-actions-test/actions/workflows/build.yaml"><img src="https://github.com/mss-swp/github-actions-test/actions/workflows/build.yaml/badge.svg" alt="ci"></a>
 <a href="https://github.com/mss-swp/github-actions-test/stargazers"><img src="https://img.shields.io/github/stars/mss-swp/github-actions-test?logo=github" alt="GitHub stars"></a>
 <a href="https://github.com/mss-swp/github-actions-test/network"><img src="https://img.shields.io/github/forks/mss-swp/github-actions-test?logo=github" alt="Fork"></a>
+
+## Stargazers over time
+[![Stargazers over time](https://starchart.cc/mss-swp/github-actions-test.svg?variant=light)](https://starchart.cc/mss-swp/github-actions-test)
